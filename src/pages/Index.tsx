@@ -1,13 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import SpeakersSection from "@/components/SpeakersSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import CTASection from "@/components/CTASection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background overflow-x-hidden">
+      <HeroSection />
+      <BenefitsSection />
+      <SpeakersSection />
+      <CTASection />
+      
+      {/* Footer */}
+      <footer className="py-8 border-t border-border/30">
+        <div className="container mx-auto px-4 text-center">
+          <p className="font-display text-xl font-bold gradient-text mb-2">FINTECH DAY</p>
+          <p className="text-sm text-muted-foreground">
+            © 2026 Fintech Day. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
+    </main>
   );
 };
 

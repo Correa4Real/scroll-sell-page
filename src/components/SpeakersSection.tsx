@@ -1,22 +1,28 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import rodrigoRegisImage from "@/assets/personas/Rodrigo_Regis.jpg";
+import rafaelMenezesImage from "@/assets/personas/Rafael_Menezes.png";
+import richardBackImage from "@/assets/personas/Richard_Back.png";
 
 const speakers = [
   {
     name: "Rodrigo Regis",
     role: "CEO e Fundador da 5P Investimentos",
     bio: "Com mais de 20 anos no mercado financeiro, foi sócio relevante da XP Inc., liderando áreas de tesouraria, produtos e grandes relações comerciais. Atualmente comanda uma das principais casas voltadas a traders e investidores de alta performance.",
+    image: rodrigoRegisImage,
   },
   {
     name: "Rafael Menezes",
     role: "Quantitative Trader",
     bio: "Doutorado em Matemática Financeira pela IMPA. Liderou por 7 anos a área de Quantitative Trading no BTG Pactual, desenvolvendo estratégias sistemáticas de alta frequência. Especialista em algoritmos e machine learning aplicado a mercados financeiros.",
+    image: rafaelMenezesImage,
   },
   {
     name: "Richard Back",
     role: "Consultor BTG Pactual",
     bio: "Trabalhou por oito anos na XP Investimentos, onde criou e liderou a área de Análise Política e Estratégia Macro. Em 2023 assumiu a chefia de gabinete da Secretaria de Relações Institucionais da Presidência da República.",
+    image: richardBackImage,
   },
   {
     name: "Igor Barenboim",
@@ -40,7 +46,13 @@ const speakers = [
   },
 ];
 
-const SpeakerCard = ({ speaker, index }: { speaker: typeof speakers[0]; index: number }) => {
+const SpeakerCard = ({
+  speaker,
+  index,
+}: {
+  speaker: (typeof speakers)[0];
+  index: number;
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const isEven = index % 2 === 0;
@@ -49,29 +61,64 @@ const SpeakerCard = ({ speaker, index }: { speaker: typeof speakers[0]; index: n
     <motion.div
       ref={ref}
       initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? -50 : 50 }}
+      animate={
+        isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? -50 : 50 }
+      }
       transition={{ duration: 0.6, delay: 0.1 }}
-      className={`flex flex-col md:flex-row items-center gap-6 ${isEven ? '' : 'md:flex-row-reverse'}`}
+      className={`relative flex flex-col md:flex-row items-center gap-6 overflow-visible ${
+        isEven ? "" : "md:flex-row-reverse"
+      }`}
     >
-      {/* Avatar placeholder */}
-      <div className="relative flex-shrink-0">
-        <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden gradient-border">
-          <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
-            <span className="font-display text-4xl font-bold text-primary/60">
-              {speaker.name.split(' ').map(n => n[0]).join('')}
-            </span>
-          </div>
+      <div className="relative flex-shrink-0 z-30 overflow-visible">
+        <div
+          className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl"
+          style={{ overflowX: "clip", overflowY: "visible" }}
+        >
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden gradient-border bg-gradient-to-br from-primary/30 to-secondary/30" />
+          {speaker.image ? (
+            <div
+              className="absolute left-0 right-0 bottom-0"
+              style={{ width: "100%" }}
+            >
+              <img
+                src={speaker.image}
+                alt={speaker.name}
+                className="object-contain object-bottom pointer-events-none"
+                style={{
+                  transform: "translateY(-2px)",
+                  width: "100%",
+                  height: "180%",
+                  maxWidth: "100%",
+                }}
+              />
+            </div>
+          ) : (
+            <div className="absolute inset-0 rounded-xl overflow-hidden">
+              <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
+                <span className="font-display text-4xl font-bold text-primary/60">
+                  {speaker.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </span>
+              </div>
+            </div>
+          )}
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl blur-xl -z-10" />
         </div>
-        <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl blur-xl -z-10" />
       </div>
-
-      {/* Content */}
-      <div className={`glass-card p-6 flex-1 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
+      <div
+        className={`glass-card p-6 flex-1 relative z-10 ${
+          isEven ? "md:text-left" : "md:text-right"
+        } text-center`}
+      >
         <h3 className="font-display text-xl md:text-2xl font-bold gradient-text mb-1">
           {speaker.name}
         </h3>
         <p className="text-primary text-sm font-medium mb-3">{speaker.role}</p>
-        <p className="text-muted-foreground text-sm leading-relaxed">{speaker.bio}</p>
+        <p className="text-muted-foreground text-sm leading-relaxed">
+          {speaker.bio}
+        </p>
       </div>
     </motion.div>
   );
@@ -92,7 +139,9 @@ const SpeakersSection = () => {
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 30 }}
-          animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={
+            isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+          }
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -103,7 +152,8 @@ const SpeakersSection = () => {
             FINTECH DAY
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Conheça os especialistas que vão compartilhar suas visões sobre o futuro do mercado financeiro
+            Conheça os especialistas que vão compartilhar suas visões sobre o
+            futuro do mercado financeiro
           </p>
         </motion.div>
 

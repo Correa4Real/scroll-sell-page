@@ -8,7 +8,6 @@ const CTASection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const handleCheckout = () => {
-    // Redireciona para o checkout
     window.location.href = "https://seu-checkout.com";
   };
 
@@ -29,12 +28,16 @@ const CTASection = () => {
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            animate={
+              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+            }
             transition={{ delay: 0.2 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-accent/30 mb-8"
           >
             <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-accent">Vagas Limitadas</span>
+            <span className="text-sm font-medium text-accent">
+              Vagas Limitadas
+            </span>
           </motion.div>
 
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -43,28 +46,41 @@ const CTASection = () => {
             <span className="text-foreground">no Fintech Day 2026</span>
           </h2>
 
-          <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Um dia inteiro de conteúdo exclusivo com os maiores especialistas do mercado financeiro. 
-            Não perca essa oportunidade única de networking e conhecimento.
+          <p className="text-lg text-muted-foreground mb-6 max-w-xl mx-auto">
+            Um dia inteiro de conteúdo exclusivo com os maiores especialistas do
+            mercado financeiro. Não perca essa oportunidade única de networking
+            e conhecimento.
           </p>
 
-          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ delay: 0.4 }}
+            className="mb-10"
+          >
+            <p className="text-3xl md:text-4xl font-display font-bold gradient-text mb-2">
+              R$ 5.000,00
+            </p>
+            <p className="text-sm text-muted-foreground">Investimento único</p>
+          </motion.div>
+
           <motion.button
             onClick={handleCheckout}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="group relative inline-flex items-center gap-3 px-10 py-5 rounded-xl font-display font-bold text-lg overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(200 80% 50%) 50%, hsl(190 95% 50%) 100%)",
+              background:
+                "linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(200 80% 50%) 50%, hsl(190 95% 50%) 100%)",
             }}
           >
-            {/* Button glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-            
-            <span className="relative text-primary-foreground">GARANTIR MINHA VAGA</span>
+
+            <span className="relative text-primary-foreground">
+              GARANTIR MINHA VAGA
+            </span>
             <ArrowRight className="relative w-5 h-5 text-primary-foreground group-hover:translate-x-1 transition-transform" />
-            
-            {/* Outer glow */}
+
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity -z-10" />
           </motion.button>
 

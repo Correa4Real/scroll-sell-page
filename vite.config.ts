@@ -14,7 +14,7 @@ const injectOGImage = () => {
         basePath === "/"
           ? "/flyer-fintech-day.png"
           : `${basePath}flyer-fintech-day.png`;
-      const imageUrl = `${baseUrl}${imagePath}`;
+      const imageUrl = `${baseUrl}${imagePath}?v=2`;
 
       let updatedHtml = html;
 

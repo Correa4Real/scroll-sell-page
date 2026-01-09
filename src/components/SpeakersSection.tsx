@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import rodrigoRegisImage from "@/assets/personas/Rodrigo_Regis.jpg";
+import rodrigoRegisImage from "@/assets/personas/Rodrigo_Regis.png";
 import rafaelMenezesImage from "@/assets/personas/Rafael_Menezes.png";
 import richardBackImage from "@/assets/personas/Richard_Back.png";
+import igorImage from "@/assets/personas/Igor.png";
+import aislanImage from "@/assets/personas/aislan.png";
+import alexandreImage from "@/assets/personas/alexandre.png";
+import bernardoImage from "@/assets/personas/bernardo.png";
 
 const speakers = [
   {
@@ -28,21 +32,25 @@ const speakers = [
     name: "Igor Barenboim",
     role: "PhD em Economia por Harvard",
     bio: "Formado pela PUC-Rio, com mestrado e Ph.D. em Economia por Harvard, atuou no Ministério da Fazenda como secretário adjunto de política econômica, participando do CMN e da COMOC e sendo responsável por regulações de impacto microeconômico. Foi presidente do Conselho Fiscal do Banco de Investimentos do Banco do Brasil, membro do Conselho Fiscal do Itaú Unibanco e do Conselho de Administração de empresas como a FINEP S.A.",
+    image: igorImage,
   },
   {
     name: "Aislan Menk",
     role: "CEO da Stars Aceleradora",
     bio: "Fundador e CEO da Stars Aceleradora, investidor de venture capital com foco em inovação e tech. Passou por Strategy&, Booz & Company e Merrill Lynch, acumulando expertise em gestão estratégica, valuation e corporate finance. Lidera a maior rede de aceleradoras de startups do Brasil, conectando capital, talento e visão de futuro para escalar negócios de alto impacto.",
+    image: aislanImage,
   },
   {
     name: "Alexandre Difini",
     role: "Diretor Comercial da Nelogica",
     bio: "Empresa responsável por uma das principais plataformas de negociação da B3, possui mais de dez anos de experiência apoiando traders e investidores com tecnologia e dados em tempo real, trazendo uma visão prática sobre o futuro das plataformas, automação de estratégias e a profissionalização do investidor pessoa física.",
+    image: alexandreImage,
   },
   {
     name: "Bernardo Bonjean",
     role: "Fundador da Metrix",
     bio: "10 anos no Banco Pactual, onde formou sua base técnica e visão de mercado, e depois teve uma passagem rápida pela XP como Head de Sales & Trading. A imersão no OPM de Harvard impulsionou seu lado empreendedor, levando à criação da Avante, que o colocou entre os 20 empreendedores que estavam mudando o Brasil e o mundo. Na pandemia, reencontrou sua paixão por tecnologia e cripto e criou a Metrix, unindo experiência, inovação e visão de longo prazo.",
+    image: bernardoImage,
   },
 ];
 
@@ -85,8 +93,14 @@ const SpeakerCard = ({
                 alt={speaker.name}
                 className="object-contain object-bottom pointer-events-none"
                 style={{
-                  transform: "translateY(-2px)",
-                  width: "100%",
+                  transform:
+                    speaker.name === "Aislan Menk"
+                      ? "translateY(-69px) translateX(12px) scale(2)"
+                      : "translateY(-69px) scale(2)",
+                  width:
+                    speaker.name === "Aislan Menk"
+                      ? "calc(100% - 4px)"
+                      : "100%",
                   height: "180%",
                   maxWidth: "100%",
                 }}

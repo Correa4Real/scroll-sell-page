@@ -80,7 +80,7 @@ const SpeakerCard = ({
       <div className="relative flex-shrink-0 z-30 overflow-visible">
         <div
           className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl"
-          style={{ overflowX: "clip", overflowY: "visible" }}
+          style={{ overflow: "visible" }}
         >
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden gradient-border bg-gradient-to-br from-primary/30 to-secondary/30" />
           {speaker.image ? (
@@ -95,14 +95,20 @@ const SpeakerCard = ({
                 style={{
                   transform:
                     speaker.name === "Aislan Menk"
-                      ? "translateY(-69px) translateX(12px) scale(2)"
+                      ? "translateY(-69px) translateX(9px) scale(2)"
+                      : speaker.name === "Bernardo Bonjean" ||
+                        speaker.name === "Richard Back"
+                      ? "translateY(-58px) translateX(12px) scale(2)"
                       : "translateY(-69px) scale(2)",
-                  width:
-                    speaker.name === "Aislan Menk"
-                      ? "calc(100% - 4px)"
-                      : "100%",
+                  width: "100%",
                   height: "180%",
                   maxWidth: "100%",
+                  paddingRight:
+                    speaker.name === "Bernardo Bonjean" ||
+                    speaker.name === "Richard Back"
+                      ? "15%"
+                      : "0",
+                  overflow: "hidden",
                 }}
               />
             </div>

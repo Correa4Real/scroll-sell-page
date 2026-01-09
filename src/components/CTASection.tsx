@@ -95,14 +95,6 @@ const CTASection = () => {
               <div className="w-2 h-2 rounded-full bg-green-500" />
               <span>Pagamento 100% Seguro</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-primary" />
-              <span>Certificado Incluso</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-accent" />
-              <span>Acesso ao Material</span>
-            </div>
           </motion.div>
         </motion.div>
       </div>

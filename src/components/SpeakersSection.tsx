@@ -82,36 +82,64 @@ const SpeakerCard = ({
           className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl"
           style={{ overflow: "visible" }}
         >
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden gradient-border bg-gradient-to-br from-primary/30 to-secondary/30" />
+          <div
+            className="w-32 h-32 md:w-40 md:h-40 rounded-xl gradient-border bg-gradient-to-br from-primary/30 to-secondary/30"
+            style={{ clipPath: "inset(0 -100% 0 -100%)" }}
+          />
           {speaker.image ? (
-            <div
-              className="absolute left-0 right-0 bottom-0"
-              style={{ width: "100%" }}
-            >
-              <img
-                src={speaker.image}
-                alt={speaker.name}
-                className="object-contain object-bottom pointer-events-none"
-                style={{
-                  transform:
-                    speaker.name === "Aislan Menk"
-                      ? "translateY(-69px) translateX(9px) scale(2)"
-                      : speaker.name === "Bernardo Bonjean" ||
-                        speaker.name === "Richard Back"
-                      ? "translateY(-58px) translateX(12px) scale(2)"
-                      : "translateY(-69px) scale(2)",
-                  width: "100%",
-                  height: "180%",
-                  maxWidth: "100%",
-                  paddingRight:
-                    speaker.name === "Bernardo Bonjean" ||
-                    speaker.name === "Richard Back"
-                      ? "15%"
-                      : "0",
-                  overflow: "hidden",
-                }}
-              />
-            </div>
+            speaker.name === "Igor Barenboim" ? (
+              <div className="absolute inset-0 rounded-xl overflow-hidden">
+                <div
+                  className="h-full w-full"
+                  style={{
+                    overflowX: "hidden",
+                    overflowY: "visible",
+                    position: "relative",
+                  }}
+                >
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="pointer-events-none object-cover object-center"
+                    style={{
+                      transform: "translateY(-17px) scale(1.2)",
+                      width: "100%",
+                      height: "100%",
+                      maxWidth: "100%",
+                    }}
+                  />
+                </div>
+              </div>
+            ) : (
+              <div
+                className="absolute left-0 right-0 bottom-0"
+                style={{ width: "100%" }}
+              >
+                <img
+                  src={speaker.image}
+                  alt={speaker.name}
+                  className="object-contain object-bottom pointer-events-none"
+                  style={{
+                    transform:
+                      speaker.name === "Aislan Menk"
+                        ? "translateY(-69px) translateX(9px) scale(2)"
+                        : speaker.name === "Bernardo Bonjean" ||
+                          speaker.name === "Richard Back"
+                        ? "translateY(-58px) translateX(12px) scale(2)"
+                        : "translateY(-69px) scale(2)",
+                    width: "100%",
+                    height: "180%",
+                    maxWidth: "100%",
+                    paddingRight:
+                      speaker.name === "Bernardo Bonjean" ||
+                      speaker.name === "Richard Back"
+                        ? "15%"
+                        : "0",
+                    overflow: "hidden",
+                  }}
+                />
+              </div>
+            )
           ) : (
             <div className="absolute inset-0 rounded-xl overflow-hidden">
               <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">

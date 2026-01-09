@@ -73,76 +73,53 @@ const SpeakerCard = ({
         isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? -50 : 50 }
       }
       transition={{ duration: 0.6, delay: 0.1 }}
-      className={`relative flex flex-col md:flex-row items-center gap-6 overflow-visible ${
+      className={`relative flex flex-col md:flex-row items-center md:items-stretch gap-6 overflow-visible ${
         isEven ? "" : "md:flex-row-reverse"
       }`}
     >
-      <div className="relative flex-shrink-0 z-30 overflow-visible">
+      <div className="relative flex-shrink-0 z-30 overflow-visible self-stretch">
         <div
-          className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl"
-          style={{ overflow: "visible" }}
+          className="relative w-40 h-full md:w-48 rounded-xl"
+          style={{ overflow: "visible", minHeight: "200px" }}
         >
           <div
-            className="w-32 h-32 md:w-40 md:h-40 rounded-xl gradient-border bg-gradient-to-br from-primary/30 to-secondary/30"
+            className="w-full h-full rounded-xl gradient-border bg-gradient-to-br from-primary/30 to-secondary/30"
             style={{ clipPath: "inset(0 -100% 0 -100%)" }}
           />
           {speaker.image ? (
-            speaker.name === "Igor Barenboim" ? (
-              <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div
-                  className="h-full w-full"
-                  style={{
-                    overflowX: "hidden",
-                    overflowY: "visible",
-                    position: "relative",
-                  }}
-                >
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="pointer-events-none object-cover object-center"
-                    style={{
-                      transform: "translateY(-17px) scale(1.2)",
-                      width: "100%",
-                      height: "100%",
-                      maxWidth: "100%",
-                    }}
-                  />
-                </div>
-              </div>
-            ) : (
-              <div
-                className="absolute left-0 right-0 bottom-0"
-                style={{ width: "100%" }}
-              >
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className="object-contain object-bottom pointer-events-none"
-                  style={{
-                    transform:
-                      speaker.name === "Aislan Menk"
-                        ? "translateY(-69px) translateX(9px) scale(2)"
-                        : speaker.name === "Bernardo Bonjean" ||
-                          speaker.name === "Richard Back"
-                        ? "translateY(-58px) translateX(12px) scale(2)"
-                        : "translateY(-69px) scale(2)",
-                    width: "100%",
-                    height: "180%",
-                    maxWidth: "100%",
-                    paddingRight:
-                      speaker.name === "Bernardo Bonjean" ||
-                      speaker.name === "Richard Back"
-                        ? "15%"
-                        : "0",
-                    overflow: "hidden",
-                  }}
-                />
-              </div>
-            )
+            <div
+              className={`absolute rounded-xl overflow-hidden ${
+                [
+                  "Rodrigo Regis",
+                  "Rafael Menezes",
+                  "Aislan Menk",
+                  "Alexandre Difini",
+                  "Bernardo Bonjean",
+                ].includes(speaker.name)
+                  ? "inset-0.5"
+                  : "inset-[1px]"
+              }`}
+            >
+              <img
+                src={speaker.image}
+                alt={speaker.name}
+                className={`pointer-events-none object-cover w-full h-full rounded-xl ${
+                  speaker.name === "Alexandre Difini"
+                    ? "scale-[1.10] object-top"
+                    : [
+                        "Rodrigo Regis",
+                        "Rafael Menezes",
+                        "Aislan Menk",
+                        "Bernardo Bonjean",
+                      ].includes(speaker.name)
+                    ? "scale-125 object-top"
+                    : ""
+                }`}
+              />
+            </div>
           ) : (
-            <div className="absolute inset-0 rounded-xl overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
+            <div className="absolute inset-[2px] rounded-xl overflow-hidden">
+              <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center rounded-xl">
                 <span className="font-display text-4xl font-bold text-primary/60">
                   {speaker.name
                     .split(" ")

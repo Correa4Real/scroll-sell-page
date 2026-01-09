@@ -9,40 +9,40 @@ const speakers = [
   {
     name: "Rodrigo Regis",
     role: "CEO e Fundador da 5P Investimentos",
-    bio: "Com mais de 20 anos no mercado financeiro, foi sócio relevante da XP Inc., liderando áreas de tesouraria, produtos e grandes relações comerciais. Atualmente comanda uma das principais casas voltadas a traders e investidores de alta performance.",
+    bio: "Com mais de 20 anos no mercado financeiro, foi sócio relevante da XP Inc., liderando áreas de tesouraria, produtos e grandes relações comerciais. Atualmente comanda uma das principais casas voltadas a traders e investidores de alta performance, integrando educação, mesa proprietária e tecnologia.",
     image: rodrigoRegisImage,
   },
   {
     name: "Rafael Menezes",
     role: "Quantitative Trader",
-    bio: "Doutorado em Matemática Financeira pela IMPA. Liderou por 7 anos a área de Quantitative Trading no BTG Pactual, desenvolvendo estratégias sistemáticas de alta frequência. Especialista em algoritmos e machine learning aplicado a mercados financeiros.",
+    bio: "Com doutorado em Matemática Financeira pela IMPA. Liderou por 7 anos a área de Quantitative Trading no BTG Pactual, desenvolvendo estratégias sistemáticas de alta frequência. Especialista em algoritmos, machine learning aplicado a mercados financeiros e gestão de risco, uma referência em trading quantitativo no Brasil.",
     image: rafaelMenezesImage,
   },
   {
     name: "Richard Back",
     role: "Consultor BTG Pactual",
-    bio: "Trabalhou por oito anos na XP Investimentos, onde criou e liderou a área de Análise Política e Estratégia Macro. Em 2023 assumiu a chefia de gabinete da Secretaria de Relações Institucionais da Presidência da República.",
+    bio: "Graduado em História pela Universidade Católica, atuou por seis anos na Câmara dos Deputados como assessor da Vice-Presidência, Presidência e Liderança do Governo. Trabalhou por oito anos na XP Investimentos, onde criou e liderou a área de Análise Política e Estratégia Macro, além de chefiar por três anos a área de Institutional Macro Sales. Em 2023 assumiu a chefia de gabinete da Secretaria de Relações Institucionais da Presidência da República, permanecendo até março de 2025. Desde maio de 2025 é consultor da OPAS/OMS e, atualmente, também atua como consultor da Necton Corretora de Valores (Grupo BTG Pactual).",
     image: richardBackImage,
   },
   {
     name: "Igor Barenboim",
     role: "PhD em Economia por Harvard",
-    bio: "Atuou no Ministério da Fazenda como secretário adjunto de política econômica. Foi presidente do Conselho Fiscal do Banco de Investimentos do Banco do Brasil e membro do Conselho Fiscal do Itaú-Unibanco.",
+    bio: "Formado pela PUC-Rio, com mestrado e Ph.D. em Economia por Harvard, atuou no Ministério da Fazenda como secretário adjunto de política econômica, participando do CMN e da COMOC e sendo responsável por regulações de impacto microeconômico. Foi presidente do Conselho Fiscal do Banco de Investimentos do Banco do Brasil, membro do Conselho Fiscal do Itaú Unibanco e do Conselho de Administração de empresas como a FINEP S.A.",
   },
   {
     name: "Aislan Menk",
     role: "CEO da Stars Aceleradora",
-    bio: "Investidor de venture capital com foco em inovação e tech. Passou por Strategy&, Booz & Company e Merrill Lynch. Lidera a maior rede de aceleradoras de startups do Brasil, conectando capital, talento e visão de futuro.",
+    bio: "Fundador e CEO da Stars Aceleradora, investidor de venture capital com foco em inovação e tech. Passou por Strategy&, Booz & Company e Merrill Lynch, acumulando expertise em gestão estratégica, valuation e corporate finance. Lidera a maior rede de aceleradoras de startups do Brasil, conectando capital, talento e visão de futuro para escalar negócios de alto impacto.",
   },
   {
     name: "Alexandre Difini",
     role: "Diretor Comercial da Nelogica",
-    bio: "Responsável por uma das principais plataformas de negociação da B3, possui mais de dez anos de experiência apoiando traders e investidores com tecnologia e dados em tempo real.",
+    bio: "Empresa responsável por uma das principais plataformas de negociação da B3, possui mais de dez anos de experiência apoiando traders e investidores com tecnologia e dados em tempo real, trazendo uma visão prática sobre o futuro das plataformas, automação de estratégias e a profissionalização do investidor pessoa física.",
   },
   {
     name: "Bernardo Bonjean",
     role: "Fundador da Metrix",
-    bio: "10 anos no Banco Pactual, depois Head de Sales & Trading na XP. A imersão no OPM de Harvard impulsionou seu lado empreendedor, levando à criação da Avante e posteriormente da Metrix, unindo experiência e inovação.",
+    bio: "10 anos no Banco Pactual, onde formou sua base técnica e visão de mercado, e depois teve uma passagem rápida pela XP como Head de Sales & Trading. A imersão no OPM de Harvard impulsionou seu lado empreendedor, levando à criação da Avante, que o colocou entre os 20 empreendedores que estavam mudando o Brasil e o mundo. Na pandemia, reencontrou sua paixão por tecnologia e cripto e criou a Metrix, unindo experiência, inovação e visão de longo prazo.",
   },
 ];
 

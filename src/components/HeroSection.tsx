@@ -76,48 +76,11 @@ const HeroSection = () => {
             de negociação para quem quer se posicionar na próxima década.
           </motion.p>
 
-          {/* Price and CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.65, duration: 0.8 }}
-            className="mt-8 space-y-4"
-          >
-            <div>
-              <p className="text-3xl md:text-4xl font-display font-bold gradient-text mb-1">
-                R$ 5.000,00
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Investimento único
-              </p>
-            </div>
-
-            <motion.button
-              onClick={handleCheckout}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-xl font-display font-bold text-base md:text-lg overflow-hidden mt-4"
-              style={{
-                background:
-                  "linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(200 80% 50%) 50%, hsl(190 95% 50%) 100%)",
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-
-              <span className="relative text-primary-foreground">
-                GARANTIR MINHA VAGA
-              </span>
-              <ArrowRight className="relative w-5 h-5 text-primary-foreground group-hover:translate-x-1 transition-transform" />
-
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity -z-10" />
-            </motion.button>
-          </motion.div>
-
           {/* Event Info Cards */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
+            transition={{ delay: 0.65, duration: 0.8 }}
             className="flex flex-wrap justify-center gap-4 md:gap-8 mt-8"
           >
             <div className="glass-card px-6 py-4 flex items-center gap-3">
@@ -143,6 +106,34 @@ const HeroSection = () => {
                 <p className="font-semibold">9h às 20h</p>
               </div>
             </div>
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="mt-8"
+          >
+            <motion.button
+              onClick={handleCheckout}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-xl font-display font-bold text-base md:text-lg overflow-hidden"
+              style={{
+                background:
+                  "linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(200 80% 50%) 50%, hsl(190 95% 50%) 100%)",
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+
+              <span className="relative text-primary-foreground">
+                GARANTIR MINHA VAGA
+              </span>
+              <ArrowRight className="relative w-5 h-5 text-primary-foreground group-hover:translate-x-1 transition-transform" />
+
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity -z-10" />
+            </motion.button>
           </motion.div>
 
           {/* Scroll indicator */}

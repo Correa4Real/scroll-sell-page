@@ -368,7 +368,7 @@ const SpeakersSection = () => {
               />
             ))}
           </div>
-          <div className="mt-6 flex justify-evenly">
+          <div className="mt-6 grid grid-cols-1 sm:flex sm:justify-evenly sm:flex-wrap sm:gap-6">
             {speakers.slice(4).map((speaker, index) => (
               <div
                 key={speaker.name}

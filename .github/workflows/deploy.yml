@@ -33,7 +33,11 @@ jobs:
       - name: Set base path and URL
         id: paths
         run: |
-          if [[ "${{ github.event.repository.name }}" == *.github.io ]]; then
+          if [ -f "public/CNAME" ]; then
+            CNAME_DOMAIN=$(cat public/CNAME | tr -d '\n' | tr -d '\r')
+            echo "base_path=/" >> $GITHUB_OUTPUT
+            echo "base_url=https://$CNAME_DOMAIN" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event.repository.name }}" == *.github.io ]]; then
             echo "base_path=/" >> $GITHUB_OUTPUT
             echo "base_url=https://${{ github.repository_owner }}.github.io" >> $GITHUB_OUTPUT
           else
